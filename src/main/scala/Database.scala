@@ -14,7 +14,7 @@ trait Database {
       Class.forName(driver)
       DriverManager.getConnection(url, username, password)
     } catch {
-      case Exception => throw new Exception("Connection was not successful")
+      case ex: Exception => throw ex
     }
 
     connection

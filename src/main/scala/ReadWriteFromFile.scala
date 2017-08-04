@@ -19,7 +19,7 @@ object ReadWriteFromFile extends ReadWrite {
     }
 
     catch {
-      case Exception => throw new Exception("Error in reading file")
+      case ex:Exception => throw new Exception("Error in reading file")
     }
 
   }
@@ -37,7 +37,7 @@ object ReadWriteFromFile extends ReadWrite {
     }
 
     catch {
-      case Exception => false
+      case ex:Exception => false
     }
 
   }
