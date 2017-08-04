@@ -22,13 +22,15 @@ trait Database {
 
   def executeQueries(testCase: TestCase, connection: Connection): Long = {
 
-    val mysqlStatement = connection.createStatement()
-    mysqlStatement.execute(testCase.preCondition)
+    val sqlQueryStatement = connection.createStatement()
+
+    sqlQueryStatement.execute(testCase.preCondition)
+
     val start = System.nanoTime()
 
-    mysqlStatement.execute(testCase.query)
+    sqlQueryStatement.execute(testCase.query)
     val end = System.nanoTime()
-    mysqlStatement.execute(testCase.postCondition)
+    sqlQueryStatement.execute(testCase.postCondition)
     end - start
 
   }

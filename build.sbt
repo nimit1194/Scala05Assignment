@@ -11,3 +11,6 @@ libraryDependencies += "postgresql" % "postgresql" % "9.1-901-1.jdbc4"
 libraryDependencies += "org.xerial" % "sqlite-jdbc" % "3.19.3"
 
 libraryDependencies += "log4j" % "log4j" % "1.2.17"
+
+libraryDependencies += "org.mockito" % "mockito-all" % "1.9.5" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"

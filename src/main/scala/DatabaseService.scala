@@ -14,6 +14,7 @@ trait DatabaseService extends Database {
     val fileContentList = fileContent.split("\n").toList
 
     val testCaseList = fileContentList.map(testCase => CSVTestCaseParser.parseTestCase(testCase))
+
     val timeTakenList = testCaseList.map {
       testCase => executeQueries(testCase, connection)
     }
@@ -25,7 +26,7 @@ trait DatabaseService extends Database {
       ", " + testCaseWithTimeTaken._1.query + ", " + testCaseWithTimeTaken._2
 
     val contentToWrite = writeContentList.mkString("\n")
-    ReadWriteFromFile.write(fileName + "_Result.csv", contentToWrite, "/home/knoldus/outputOfCSVFiles")
+    ReadWriteFromFile.write(fileName + "_Result.csv", contentToWrite, "/home/knoldus/FrameWorkTutorail/ScalaCapstoneProject/CSVOuputFiles")
     closeConnection(connection)
   }
 
